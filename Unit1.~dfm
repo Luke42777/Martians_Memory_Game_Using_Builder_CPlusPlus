@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object background: TImage
@@ -40083,7 +40084,7 @@ object Form1: TForm1
     Cursor = crHandPoint
     Alignment = taCenter
     AutoSize = False
-    Caption = 'Label1'
+    Caption = 'Start game'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -29
@@ -40091,6 +40092,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     Transparent = True
+    OnClick = Label1Click
   end
   object b1: TImage
     Left = 120
@@ -44844,7 +44846,7 @@ object Form1: TForm1
   end
   object b1On: TImage
     Left = 120
-    Top = 152
+    Top = 144
     Width = 81
     Height = 123
     Cursor = crArrow
@@ -45795,7 +45797,7 @@ object Form1: TForm1
   end
   object b2On: TImage
     Left = 240
-    Top = 152
+    Top = 144
     Width = 81
     Height = 123
     Cursor = crHandPoint
@@ -46746,7 +46748,7 @@ object Form1: TForm1
   end
   object b3On: TImage
     Left = 352
-    Top = 152
+    Top = 144
     Width = 81
     Height = 123
     Cursor = crHandPoint
@@ -47697,7 +47699,7 @@ object Form1: TForm1
   end
   object b4On: TImage
     Left = 480
-    Top = 152
+    Top = 144
     Width = 81
     Height = 123
     Cursor = crHandPoint
@@ -48648,7 +48650,7 @@ object Form1: TForm1
   end
   object b5On: TImage
     Left = 592
-    Top = 152
+    Top = 144
     Width = 81
     Height = 123
     Cursor = crHandPoint
