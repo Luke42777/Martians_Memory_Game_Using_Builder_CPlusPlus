@@ -6,6 +6,8 @@ object Form1: TForm1
   VertScrollBar.Position = 21
   Caption = 'Martians Memory Game'
   Color = clBtnFace
+  UseDockManager = True
+  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -41043,6 +41045,7 @@ object Form1: TForm1
       0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
       FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000}
     Transparent = True
+    OnClick = b1Click
   end
   object b2: TImage
     Left = 240

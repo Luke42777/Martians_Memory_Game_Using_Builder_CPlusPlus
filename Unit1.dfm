@@ -3,9 +3,10 @@ object Form1: TForm1
   Top = 125
   Width = 832
   Height = 561
-  VertScrollBar.Position = 21
   Caption = 'Martians Memory Game'
   Color = clBtnFace
+  UseDockManager = True
+  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -17,7 +18,7 @@ object Form1: TForm1
   TextHeight = 13
   object background: TImage
     Left = 0
-    Top = -29
+    Top = -8
     Width = 800
     Height = 534
     AutoSize = True
@@ -40078,7 +40079,7 @@ object Form1: TForm1
   end
   object Label1: TLabel
     Left = 128
-    Top = 451
+    Top = 472
     Width = 545
     Height = 40
     Cursor = crHandPoint
@@ -40096,7 +40097,7 @@ object Form1: TForm1
   end
   object b1: TImage
     Left = 120
-    Top = 144
+    Top = 165
     Width = 81
     Height = 123
     Cursor = crHandPoint
@@ -41043,10 +41044,13 @@ object Form1: TForm1
       0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
       FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000}
     Transparent = True
+    OnClick = b1Click
+    OnMouseDown = b1MouseDown
+    OnMouseUp = b1MouseUp
   end
   object b2: TImage
     Left = 240
-    Top = 144
+    Top = 165
     Width = 81
     Height = 123
     Cursor = crHandPoint
@@ -41993,10 +41997,13 @@ object Form1: TForm1
       0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
       FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000}
     Transparent = True
+    OnClick = b2Click
+    OnMouseDown = b2MouseDown
+    OnMouseUp = b2MouseUp
   end
   object b3: TImage
     Left = 352
-    Top = 144
+    Top = 165
     Width = 81
     Height = 123
     Cursor = crHandPoint
@@ -42943,10 +42950,13 @@ object Form1: TForm1
       0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
       FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000}
     Transparent = True
+    OnClick = b3Click
+    OnMouseDown = b3MouseDown
+    OnMouseUp = b3MouseUp
   end
   object b4: TImage
     Left = 480
-    Top = 144
+    Top = 165
     Width = 81
     Height = 123
     Cursor = crHandPoint
@@ -43893,10 +43903,13 @@ object Form1: TForm1
       FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
       00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00}
     Transparent = True
+    OnClick = b4Click
+    OnMouseDown = b4MouseDown
+    OnMouseUp = b4MouseUp
   end
   object b5: TImage
     Left = 592
-    Top = 144
+    Top = 165
     Width = 81
     Height = 123
     Cursor = crHandPoint
@@ -44843,10 +44856,13 @@ object Form1: TForm1
       0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
       FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000}
     Transparent = True
+    OnClick = b5Click
+    OnMouseDown = b5MouseDown
+    OnMouseUp = b5MouseUp
   end
   object b1On: TImage
     Left = 120
-    Top = 144
+    Top = 165
     Width = 81
     Height = 123
     Cursor = crArrow
@@ -45797,7 +45813,7 @@ object Form1: TForm1
   end
   object b2On: TImage
     Left = 240
-    Top = 144
+    Top = 165
     Width = 81
     Height = 123
     Cursor = crHandPoint
@@ -46748,7 +46764,7 @@ object Form1: TForm1
   end
   object b3On: TImage
     Left = 352
-    Top = 144
+    Top = 165
     Width = 81
     Height = 123
     Cursor = crHandPoint
@@ -47699,7 +47715,7 @@ object Form1: TForm1
   end
   object b4On: TImage
     Left = 480
-    Top = 144
+    Top = 165
     Width = 81
     Height = 123
     Cursor = crHandPoint
@@ -48650,7 +48666,7 @@ object Form1: TForm1
   end
   object b5On: TImage
     Left = 592
-    Top = 144
+    Top = 165
     Width = 81
     Height = 123
     Cursor = crHandPoint
