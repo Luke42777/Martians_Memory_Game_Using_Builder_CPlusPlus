@@ -293,7 +293,7 @@ void __fastcall TForm1::b3MouseDown(TObject *Sender, TMouseButton Button,
       TShiftState Shift, int X, int Y)
 {
         b3->Picture->LoadFromFile("img/p3a.bmp");
-    sndPlaySound("snd/d2.wav",SND_ASYNC);
+    sndPlaySound("snd/d3.wav",SND_ASYNC);
 }
 //---------------------------------------------------------------------------
 

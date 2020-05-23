@@ -9,14 +9,23 @@
 #pragma resource "*.dfm"
 TForm1 *Form1;
 
-int level = 0; // describing how many bulbs  needs to be shown in sequence
+int howMany = 0; // describing how many bulbs  needs to be shown in sequence
 bool gameOpened = false;
 int numbers[1000];
 int counter = 0;
 //---------------------------------------------------------------------------
 void playSequence()
 {
-    //first all bulbs (non-On) are disabled
+    Application->ProcessMessages(); //to screen be responsive whilst waiting
+    Sleep(1000);
+    Form1->b1->Picture->LoadFromFile("img/p1.bmp");
+    Form1->b2->Picture->LoadFromFile("img/p2.bmp");
+    Form1->b3->Picture->LoadFromFile("img/p3.bmp");
+    Form1->b4->Picture->LoadFromFile("img/p4.bmp");
+    Form1->b5->Picture->LoadFromFile("img/p5.bmp");
+
+
+    // all bulbs (non-On) are disabled
     Form1->b1->Enabled = false;
     Form1->b2->Enabled = false;
     Form1->b2->Enabled = false;
@@ -34,9 +43,9 @@ void playSequence()
      Form1->Label1->Caption = "Remember sequence";
      Application->ProcessMessages(); //to screen be responsive whilst waiting
      Sleep(1000);
-     level++;
+     howMany++;
 
-     for(int i = 0; i < level;i++)
+     for(int i = 0; i < howMany;i++)
      {
         switch(numbers[i])
         {
@@ -97,6 +106,7 @@ void playSequence()
     Form1->b2->Enabled = true;
 
     Form1->Label1->Caption = "Reapeat sequence";
+    counter = 0;
 }
 
 //---------------------------------------------------------------------------
@@ -132,15 +142,195 @@ void __fastcall TForm1::b1Click(TObject *Sender)
     if(gameOpened == true)
     {
          counter++;
-        if(numbers[counter - 1] != 1)
+        if(numbers[counter - 1] != 1) //loose condition
          {
-           level--; // that should be decremented before shown in the next instruction
-           Label1->Caption = "You loose. Score: " + IntToStr(level);
+           howMany--; // that should be decremented before shown in the next instruction
+           Label1->Caption = "You loose. Score: " + IntToStr(howMany);
            sndPlaySound("snd/koniec.wav",SND_ASYNC);
            gameOpened = false;
          }
-         
+         if(counter == howMany)
+         {
+            Label1->Caption = "Well done";
+            playSequence();
+
+         }
+
     }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::b2Click(TObject *Sender)
+{
+   
+    if(gameOpened == true)
+    {
+         counter++;
+        if(numbers[counter - 1] != 2) //loose condition
+         {
+           howMany--; // that should be decremented before shown in the next instruction
+           Label1->Caption = "You loose. Score: " + IntToStr(howMany);
+           sndPlaySound("snd/koniec.wav",SND_ASYNC);
+           gameOpened = false;
+         }
+         if(counter == howMany)
+         {
+            Label1->Caption = "Well done";
+            playSequence();
+
+         }
+
+    }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::b3Click(TObject *Sender)
+{
+  
+    if(gameOpened == true)
+    {
+         counter++;
+        if(numbers[counter - 1] != 3) //loose condition
+         {
+           howMany--; // that should be decremented before shown in the next instruction
+           Label1->Caption = "You loose. Score: " + IntToStr(howMany);
+           sndPlaySound("snd/koniec.wav",SND_ASYNC);
+           gameOpened = false;
+         }
+         if(counter == howMany)
+         {
+            Label1->Caption = "Well done";
+            playSequence();
+
+         }
+
+    }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::b4Click(TObject *Sender)
+{
+  
+    if(gameOpened == true)
+    {
+         counter++;
+        if(numbers[counter - 1] != 4) //loose condition
+         {
+           howMany--; // that should be decremented before shown in the next instruction
+           Label1->Caption = "You loose. Score: " + IntToStr(howMany);
+           sndPlaySound("snd/koniec.wav",SND_ASYNC);
+           gameOpened = false;
+         }
+         if(counter == howMany)
+         {
+            Label1->Caption = "Well done";
+            playSequence();
+         }
+
+    }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::b5Click(TObject *Sender)
+{
+    
+    if(gameOpened == true)
+    {
+         counter++;
+        if(numbers[counter - 1] != 5) //loose condition
+         {
+           howMany--; // that should be decremented before shown in the next instruction
+           Label1->Caption = "You loose. Score: " + IntToStr(howMany);
+           sndPlaySound("snd/koniec.wav",SND_ASYNC);
+           gameOpened = false;
+         }
+         if(counter == howMany)
+         {
+            Label1->Caption = "Well done";
+            playSequence();
+
+         }
+
+    }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::b1MouseDown(TObject *Sender, TMouseButton Button,
+      TShiftState Shift, int X, int Y)
+{
+    b1->Picture->LoadFromFile("img/p1a.bmp");
+    sndPlaySound("snd/d1.wav",SND_ASYNC);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::b1MouseUp(TObject *Sender, TMouseButton Button,
+      TShiftState Shift, int X, int Y)
+{
+    b1->Picture->LoadFromFile("img/p1.bmp");
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm1::b2MouseDown(TObject *Sender, TMouseButton Button,
+      TShiftState Shift, int X, int Y)
+{
+     b2->Picture->LoadFromFile("img/p2a.bmp");
+    sndPlaySound("snd/d2.wav",SND_ASYNC);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::b2MouseUp(TObject *Sender, TMouseButton Button,
+      TShiftState Shift, int X, int Y)
+{
+       b2->Picture->LoadFromFile("img/p2.bmp");
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm1::b3MouseDown(TObject *Sender, TMouseButton Button,
+      TShiftState Shift, int X, int Y)
+{
+        b3->Picture->LoadFromFile("img/p3a.bmp");
+    sndPlaySound("snd/d3.wav",SND_ASYNC);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::b3MouseUp(TObject *Sender, TMouseButton Button,
+      TShiftState Shift, int X, int Y)
+{
+     b3->Picture->LoadFromFile("img/p3.bmp");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::b4MouseDown(TObject *Sender, TMouseButton Button,
+      TShiftState Shift, int X, int Y)
+{
+     b4->Picture->LoadFromFile("img/p4a.bmp");
+    sndPlaySound("snd/d4.wav",SND_ASYNC);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::b4MouseUp(TObject *Sender, TMouseButton Button,
+      TShiftState Shift, int X, int Y)
+{
+          b4->Picture->LoadFromFile("img/p4.bmp");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::b5MouseDown(TObject *Sender, TMouseButton Button,
+      TShiftState Shift, int X, int Y)
+{
+         b5->Picture->LoadFromFile("img/p5a.bmp");
+         sndPlaySound("snd/d5.wav",SND_ASYNC);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::b5MouseUp(TObject *Sender, TMouseButton Button,
+      TShiftState Shift, int X, int Y)
+{
+         b5->Picture->LoadFromFile("img/p5.bmp");
 }
 //---------------------------------------------------------------------------
 
